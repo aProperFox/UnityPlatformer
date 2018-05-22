@@ -4,10 +4,12 @@ using UnityEngine.SceneManagement;
 
 namespace UnityStandardAssets._2D {
   public class Restarter : MonoBehaviour {
-    private void OnTriggerExit2D(Collider2D collision) {
+    private static String[] destroyables = { "Projectile", "NPC" };
+
+    private void OnTriggerEnter2D(Collider2D collision) {
       if (collision.tag == "Player") {
         SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
-      } else if (collision.tag == "Projectile") {
+      } else if (Array.IndexOf(destroyables, collision.tag) > -1) {
         Destroy(collision.gameObject);
       }
     }

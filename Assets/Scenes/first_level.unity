@@ -113,6 +113,30 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &510032597 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 100000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
+  m_PrefabInternal: {fileID: 1272076253}
+--- !u!68 &510032598
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 510032597}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -10.040954, y: 7.4891353}
+  - {x: -10.001811, y: -7.567254}
+  - {x: 10.019151, y: -7.59367}
+  - {x: 10.00235, y: 7.462028}
+  - {x: -9.998468, y: 7.4891357}
 --- !u!1001 &564966404
 Prefab:
   m_ObjectHideFlags: 0
@@ -319,7 +343,7 @@ GameObject:
   - component: {fileID: 1184064458}
   m_Layer: 0
   m_Name: Pacing Enemy
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,7 +480,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a5b9b9b64ee5ef479b4ecfd7ead3374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitTime: 3
+  waitTime: 1
   walkSpeed: 60
 --- !u!1001 &1192531763
 Prefab:
@@ -579,7 +603,8 @@ Prefab:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6100000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a038b284634e29f4aaf058814aa61a6f, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1615334149

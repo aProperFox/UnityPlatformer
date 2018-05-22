@@ -67,13 +67,12 @@ public class PlayerController : MonoBehaviour {
 
   void HandleCreateProjectile() {
     if (Input.GetKeyDown(KeyCode.Mouse0)) {
-      Vector2 position = body.position;
       Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+      Vector2 rotation = mouse - body.position;
       
-      float angle = Vector3.SignedAngle(position, mouse, Vector3.forward);
-      Quaternion quaternion = Quaternion.AngleAxis(angle, Vector3.forward);
-      print(angle);
-      Instantiate(projectile, position, quaternion);
+      Quaternion quaternion = Quaternion.FromToRotation(Vector3.right, rotation.normalized);
+
+      Instantiate(projectile, body.position + (rotation.normalized * 2), quaternion);
     }
   }
 }

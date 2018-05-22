@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Projectile
   - Platform
+  - NPC
   layers:
   - Default
   - TransparentFX
