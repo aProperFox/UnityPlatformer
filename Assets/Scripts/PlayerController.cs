@@ -72,7 +72,9 @@ public class PlayerController : MonoBehaviour {
       
       Quaternion quaternion = Quaternion.FromToRotation(Vector3.right, rotation.normalized);
 
-      Instantiate(projectile, body.position + (rotation.normalized * 2), quaternion);
+      Projectile arrow = projectile.GetComponent<Projectile>();
+      arrow.initialSpeed = rotation.magnitude * Projectile.SPEED_MULTIPLIER;
+      Instantiate(arrow, body.position + (rotation.normalized * 2), quaternion);
     }
   }
 }

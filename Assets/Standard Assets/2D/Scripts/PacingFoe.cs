@@ -24,11 +24,10 @@ public class PacingFoe : MonoBehaviour {
   // Update is called once per frame
   void Update() {
     float deltaX = direction * walkSpeed * Time.deltaTime;
-    Vector2 movement = new Vector2(deltaX, body.velocity.y);
-    body.velocity = movement;
     anim.SetFloat("speed", Mathf.Abs(deltaX));
     if (isWalking) {
       transform.localScale = new Vector3(direction, 1f, 1f);
+      body.AddForce(new Vector2(direction * walkSpeed, 0), ForceMode2D.Force);
       float x = (direction > 0 ? box.bounds.max.x : box.bounds.min.x) + (direction * box.bounds.size.x / 2);
       Vector3 min = box.bounds.min;
       Collider2D hit = Physics2D.OverlapArea(new Vector2(x, min.y - .1f), new Vector2(x, min.y - .5f));

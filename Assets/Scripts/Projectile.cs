@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class Projectile : MonoBehaviour {
-
-  public float initialSpeed = 40f;
+  public static float SPEED_MULTIPLIER = 4f;
+  public float initialSpeed = 20f;
 
   Rigidbody2D body;
 
